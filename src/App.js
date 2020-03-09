@@ -13,7 +13,11 @@ function App() {
 
   return (
     <>
-      <select>
+      <select
+        onChange={e => {
+          baseCurrency(e.target.value);
+        }}
+      >
         <option selected value="USD">
           USD
         </option>
@@ -30,7 +34,11 @@ function App() {
         type="number"
       />
       <strong>TO</strong>
-      <select>
+      <select
+        onChange={e => {
+          convertCurrency(e.target.value);
+        }}
+      >
         <option selected value="USD">
           USD
         </option>
