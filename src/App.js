@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./App.css";
+import SelectInput from "./components/SelectInput";
 
 function App() {
   const [result, setResult] = useState(0);
@@ -23,58 +24,61 @@ function App() {
     fetchData();
   }, [fromCurr, toCurr]);
 
-  const baseCurrency = curr => {
-    setFromCurr(curr);
-  };
-
-  const convertCurrency = curr => {
-    setToCurr(curr);
-  };
-
   return (
     <>
-      <select
-        onChange={e => {
-          baseCurrency(e.target.value);
+      <div
+        className="app-container"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          height: 100 + "vh",
+          justifyContent: "center",
+          alignItems: "center",
+          background_color: "black"
         }}
       >
-        <option selected value="USD">
-          USD
-        </option>
-        <option value="EUR">EUR</option>
-        <option value="GBP">GBP</option>
-        <option value="ILS">ILS</option>
-        <option value="PHP">PHP</option>
-      </select>
-      <input
-        onChange={e => {
-          setFromVal(e.target.value);
-        }}
-        value={fromVal}
-        type="number"
-      />
-      <strong>TO</strong>
-      <select
-        onChange={e => {
-          convertCurrency(e.target.value);
-        }}
-      >
-        <option selected value="USD">
-          USD
-        </option>
-        <option value="EUR">EUR</option>
-        <option value="GBP">GBP</option>
-        <option value="ILS">ILS</option>
-        <option value="PHP">PHP</option>
-      </select>
-      <input
-        onChange={e => {
-          setToVal(e.target.value);
-        }}
-        value={toVal}
-        type="number"
-      />
-      <h3>{result}</h3>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row"
+          }}
+        >
+          <SelectInput
+            currency={setFromCurr}
+            setVal={setFromVal}
+            value={fromVal}
+          />
+          <input
+            onChange={e => {
+              setFromVal(e.target.value);
+            }}
+            value={fromVal}
+            input
+            type="text"
+            pattern="[0-9]*"
+          />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row"
+          }}
+        >
+          <SelectInput currency={setToCurr} setVal={setToVal} value={toVal} />
+          <input
+            // style={{ height: 20 + "px" }}
+            onChange={e => {
+              setToVal(e.target.value);
+            }}
+            value={toVal}
+            input
+            type="text"
+            pattern="[0-9]*"
+          />
+        </div>
+
+        <h3>{result}</h3>
+      </div>
     </>
   );
 }
