@@ -24,16 +24,6 @@ const SelectInput = props => {
           </Form.Control>
         </Form.Group>
       </Form>
-      {/* <input
-        // style={{ height: 20 + "px" }}
-        onChange={e => {
-          setVal(e.target.value);
-        }}
-        value={value}
-        input
-        type="text"
-        pattern="[0-9]*"
-      /> */}
     </>
   );
 };
