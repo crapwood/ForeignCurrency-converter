@@ -1,3 +1,11 @@
+# ForeignCurrency-converter
+
+Server Side Rendering (SSR) on React with NodeJs and Express ---> https://hardcore-banach-ce03e6.netlify.com/
+
+Credits:
+
+## https://exchangeratesapi.io/ - foreign currency api that i used for this mini-project
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,7 +74,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-# ForeignCurrency-converter
-
-SSR on React with NodeJs and Express ---> Foreign currency converter
