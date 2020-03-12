@@ -7,7 +7,7 @@ const SelectInput = props => {
   return (
     <>
       <Form
-        style={{ width: 80 + "px" }}
+        style={{ marginTop: 10 + "px" }}
         onChange={e => {
           currency(e.target.value);
         }}

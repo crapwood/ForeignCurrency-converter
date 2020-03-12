@@ -11,7 +11,8 @@ function App() {
   const [toCurr, setToCurr] = useState("USD");
 
   useEffect(() => {
-    setResult(fromVal * toVal);
+    let result = fromVal * toVal;
+    setResult(result.toFixed(2));
   }, [toVal, fromVal]);
 
   useEffect(() => {
@@ -34,13 +35,19 @@ function App() {
           height: 100 + "vh",
           justifyContent: "center",
           alignItems: "center",
-          background_color: "black"
+          background: "#009FFF" /* fallback for old browsers */,
+          background:
+            "-webkit-linear-gradient(to right, #ec2F4B, #009FFF)" /* Chrome 10-25, Safari 5.1-6 */,
+          background:
+            "linear-gradient(to right, #ec2F4B, #009FFF)" /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }}
       >
+        <h1>Foreign Exchange Rates</h1>
         <div
           style={{
             display: "flex",
-            flexDirection: "row"
+            flexDirection: "column",
+            alignItems: "center"
           }}
         >
           <SelectInput
@@ -49,6 +56,14 @@ function App() {
             value={fromVal}
           />
           <input
+            style={{
+              color: "white",
+              background: "black",
+              margin: 10 + "px",
+              borderRadius: 7 + "px",
+              borderColor: "black",
+              outline: "none"
+            }}
             onChange={e => {
               setFromVal(e.target.value);
             }}
@@ -61,12 +76,20 @@ function App() {
         <div
           style={{
             display: "flex",
-            flexDirection: "row"
+            flexDirection: "column",
+            alignItems: "center"
           }}
         >
           <SelectInput currency={setToCurr} setVal={setToVal} value={toVal} />
           <input
-            // style={{ height: 20 + "px" }}
+            style={{
+              color: "white",
+              background: "black",
+              margin: 10 + "px",
+              borderRadius: 7 + "px",
+              borderColor: "black",
+              outline: "none"
+            }}
             onChange={e => {
               setToVal(e.target.value);
             }}
@@ -77,7 +100,9 @@ function App() {
           />
         </div>
 
-        <h3>{result}</h3>
+        <h3>
+          {fromVal} {fromCurr} is {result} in {toCurr}
+        </h3>
       </div>
     </>
   );
