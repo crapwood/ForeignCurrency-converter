@@ -32,6 +32,7 @@ function App() {
         style={{
           display: "flex",
           flexDirection: "column",
+          textAlign: "center",
           height: 100 + "vh",
           justifyContent: "center",
           alignItems: "center",
