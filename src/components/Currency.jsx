@@ -13,7 +13,10 @@ const SelectInput = props => {
         }}
       >
         <Form.Group controlId="exampleForm.ControlSelect1">
-          <Form.Control as="select">
+          <Form.Control
+            as="select"
+            style={{ background: "black", color: "white" }}
+          >
             <option selected value="USD">
               USD
             </option>
