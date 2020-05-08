@@ -27,24 +27,18 @@ function App() {
   }, [fromCurr, toCurr]);
 
   return (
-    <>
-      <div className="app-container">
-        <h1>Foreign Exchange Rates</h1>
-        <div className="row-container">
-          <Currency
-            currency={setFromCurr}
-            setVal={setFromVal}
-            value={fromVal}
-          />
-          <InputValue setVal={setFromVal} value={fromVal} />
-          <Currency currency={setToCurr} setVal={setToVal} value={toVal} />
-          <InputValue setVal={setToVal} value={toVal} />
-        </div>
-        <h3>
-          {fromVal} {fromCurr} is {result} in {toCurr}
-        </h3>
+    <div className="app-container">
+      <h1>Foreign Exchange Rates</h1>
+      <div className="row-container">
+        <Currency currency={setFromCurr} setVal={setFromVal} value={fromVal} />
+        <InputValue setVal={setFromVal} value={fromVal} />
+        <Currency currency={setToCurr} setVal={setToVal} value={toVal} />
+        <InputValue setVal={setToVal} value={toVal} />
       </div>
-    </>
+      <h3>
+        {fromVal} {fromCurr} is {result} in {toCurr}
+      </h3>
+    </div>
   );
 }
 

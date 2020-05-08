@@ -2,6 +2,8 @@
 
 Server Side Rendering (SSR) on React with NodeJs and Express ---> https://hardcore-banach-ce03e6.netlify.com/
 
+![screenshot](forex_screenshot.JPG)
+
 Credits:
 
 ## https://exchangeratesapi.io/ - foreign currency api that i used for this mini-project
